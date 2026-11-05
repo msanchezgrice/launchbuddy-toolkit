@@ -1,0 +1,4 @@
+interface:
+  display_name: "LaunchBuddy"
+  short_description: "Assess launch gaps and turn them into approved launch work"
+  default_prompt: "Use $launchbuddy to assess this launch, prioritize the gaps, and prepare the highest-leverage fix."

@@ -1,0 +1,19 @@
+{
+  "name": "LaunchBuddy agent toolkit",
+  "version": "1.0.0",
+  "date": "2026-11-04",
+  "endpoint": "https://launchbuddy.com/api/mcp",
+  "skills": [
+    "agentready-audit",
+    "audit-my-launch",
+    "first-user-feedback",
+    "fix-launch-gap",
+    "launch-demo",
+    "launch-distribution",
+    "launch-signup-check",
+    "launch-support",
+    "launchbuddy",
+    "launchready-audit"
+  ],
+  "contains": "Public client instructions and skills only"
+}
