@@ -1,6 +1,6 @@
 ---
 name: audit-my-launch
-description: Audit a public launch URL with LaunchBuddy, LaunchReady, and AgentReady, match gaps to resources, and choose the next useful action.
+description: Audit a public launch URL with LaunchBuddy, combining launch, technical and agent-readiness checks, match gaps to resources, and choose the next useful action.
 ---
 
 # Audit my launch
