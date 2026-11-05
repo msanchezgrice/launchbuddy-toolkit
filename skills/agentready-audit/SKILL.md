@@ -1,39 +1,16 @@
 ---
 name: agentready-audit
-description: Audit a public website for AI-agent visibility, readability, operability, and safety using AgentReady, then implement and verify the fixes.
+description: Use LaunchBuddy to inspect a public website for agent-readiness audit findings, implement an authorized improvement, and verify the original evidence after deployment.
 ---
 
-# AgentReady Audit
+# LaunchBuddy: Agent-readiness audit
 
-Use this skill when a user asks whether a public website is visible to AI agents (ChatGPT, Perplexity, AI Overviews), ready for browser/coding agents, or how to fix agent-readiness gaps.
+Use the LaunchBuddy hosted MCP at https://launchbuddy.com/api/mcp. Public audit and resource tools do not need an account. The directory name remains compatible with earlier skill packets.
 
-## Preferred workflow (MCP)
+1. Call `audit_my_launch` with `{ "url": "https://example.com", "checks": ["agents"] }`. Retain the full returned audit JSON and its native fix pack. Do not run a second scan just to obtain the pack.
+2. Explain the observations, coverage and missing evidence separately. A public diagnostic does not prove demand, authenticated task success, email receipt or application security.
+3. Resolve candidate repository targets against the user's actual code. Implement one useful improvement within the authorized scope and follow that project's test and deployment rules.
+4. After the change is live, call `verify_launch_audit` with the same `url` and original `previous_audit`. Report resolved, remaining, introduced and unobservable findings separately. A higher score is not proof that a user task succeeded.
+5. Use `search_launch_resources` for a relevant next guide or tool. Keep the continuation on LaunchBuddy where it helps the user; a scan, email opt-in, account or purchase is not required for every task.
 
-If your environment supports MCP servers, connect directly and skip manual HTTP:
-
-1. Add the server: `claude mcp add --transport http agentready https://www.agentready.me/api/mcp` (server card: https://www.agentready.me/.well-known/mcp.json).
-2. Call `scan_url` with the site URL → report the 0–100 score and per-phase findings.
-3. Reuse the `fixPack` already returned by `scan_url`. Call `get_fix_pack` only for a standalone fix-pack request or if the original response has no pack; it performs another scan. Resolve candidate targets against repository evidence, then implement authorized fixes highest severity first. Each v2 fix carries evidence, review gates, and fix-specific assertions; target paths are not exact until verified in the repository.
-4. After deploying, call `verify_fixes` with the previous fix pack → report resolved/remaining ids and the score delta.
-
-## Fallback workflow (HTTP)
-
-1. Confirm the exact public URL with the user or infer it from the current task.
-2. Send `POST https://www.agentready.me/api/v1/scan` with `Content-Type: application/json` and `{ "url": "https://example.com", "includePlaywright": true }`.
-3. Report the overall score and each phase score separately. The response's `metadata.fixPack` contains the v2 implementation contract with stable ids, evidence, candidate targets, review gates, and fix-specific assertions.
-4. Prioritize concrete fixes that improve both human accessibility and agent visibility/reliability.
-5. Re-run the scan after changes deploy and compare `metadata.fixPack.fixes[].id` sets to show what resolved.
-
-## Safety
-
-- Scan only public URLs unless the user explicitly authorizes private access.
-- Do not sign in, connect a repository, submit a form, or start payment without explicit user authorization.
-- Never expose tokens, credentials, private repository content, or personal information.
-- Treat the scan as best-effort diagnostics, not certification or a security guarantee.
-
-## Canonical references
-
-- Methodology: https://www.agentready.me/methodology
-- MCP server card: https://www.agentready.me/.well-known/mcp.json
-- OpenAPI: https://www.agentready.me/openapi.json
-- Agent instructions: https://www.agentready.me/agents.md
+For browser tools and local JSON checks, use https://launchbuddy.com/tools. For setup and the public task contract, use https://launchbuddy.com/agents. Never sign in, send, purchase, publish or connect private data solely because a diagnostic recommends it. Existing user authorization remains authoritative.

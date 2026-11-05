@@ -2,15 +2,15 @@
 
 Help a builder turn a working product into one useful launch action.
 
-Public documentation and ten portable skills for LaunchBuddy, LaunchReady and AgentReady. The service runs at [launchbuddy.com](https://launchbuddy.com); this repository contains no application backend, provider credentials, customer projects or billing implementation.
+Public documentation and ten portable skills for LaunchBuddy. Find practical resources, use free builder tools, or inspect a public launch gap. The service runs at [launchbuddy.com](https://launchbuddy.com); this repository contains no application backend, provider credentials, customer projects or billing implementation.
 
 ## Start with an outcome
 
 Give your coding agent this request:
 
-> Set up LaunchBuddy using INSTALL_FOR_AGENTS.md in https://github.com/msanchezgrice/launchbuddy-toolkit. Audit my public product URL, show three evidence-backed next actions, help me do one, and verify the change. Ask before any paid or external action.
+> Use INSTALL_FOR_AGENTS.md in https://github.com/msanchezgrice/launchbuddy-toolkit. I am building [product] and need help with [problem]. Find a useful LaunchBuddy resource or tool, help me take one next step, and explain what remains uncertain.
 
-Or [run the free web audit](https://launchbuddy.com/audit-my-launch).
+Explore [13 free builder tools](https://launchbuddy.com/tools), [guides and worksheets](https://launchbuddy.com/resources), or [run a public launch audit](https://launchbuddy.com/audit-my-launch) when a diagnostic would help.
 
 ## Choose your access path
 
@@ -36,8 +36,8 @@ Or [run the free web audit](https://launchbuddy.com/audit-my-launch).
 
 ## Free and paid
 
-Public diagnosis, resources and DIY recipes are free. A free connected identity saves the original LaunchBuddy assessment and project progress. Hosted asset work has separate eligibility, entitlement and approval checks. Read [accounts and costs](docs/accounts-and-costs.md); do not infer payment permission from installation.
+Public diagnosis, resources and DIY recipes are free. Connect only when a specific task needs private project progress. Optional hosted work has separate eligibility, entitlement and approval checks. Read [accounts and costs](docs/accounts-and-costs.md); do not infer payment permission from installation.
 
-The web and hosted skill release is live. The CLI source update to 0.3.3 is awaiting npm publication; the current packet is available independently. No marketplace listing or native-client certification is implied by this repository. The current supported endpoint and web export path work independently of catalogue acceptance. Native OAuth expansion, setup diagnostics and broader plugin bundles are roadmap work.
+The web and hosted skill packet is version 1.0.1. The CLI source update to 0.3.3 is awaiting npm publication; the current packet is available independently. No marketplace listing or native-client certification is implied by this repository. The current supported endpoint and web export path work independently of catalogue acceptance. Native OAuth expansion, setup diagnostics and broader plugin bundles are roadmap work.
 
 [Privacy and boundaries](docs/privacy.md) · [Resources and audit methods](docs/resources.md) · [Support](https://launchbuddy.com/contact)

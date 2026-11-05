@@ -4,7 +4,7 @@ Use this guide when the person has asked you to set up LaunchBuddy. Reading a li
 
 ## 1. Choose the smallest supported setup
 
-If LaunchBuddy tools are already available, reuse them. Do not overwrite existing client settings or add a duplicate server. Confirm `audit_my_launch` is visible before promising the combined workflow.
+If LaunchBuddy tools are already available, reuse them. Do not overwrite existing client settings or add a duplicate server. Confirm `search_launch_resources` and any task-specific tool are visible before promising a workflow.
 
 For a client with remote Streamable HTTP support, add `https://launchbuddy.com/api/mcp` through its documented connection flow. Public audit and resource tools require no account. Claude Code users can run:
 
@@ -20,11 +20,11 @@ Use the `audit-my-launch` folder in this repository, or download the [skills pac
 
 The published LaunchBuddy installer is `npx getlaunchbuddy install --all`. It installs the router skill and bridge for Claude, Codex and Cursor and changes all three client configurations. Explain that scope before using it; prefer the selected skill and direct remote connection when that is sufficient. Installing the router is distinct from installing every focused recipe in this repository.
 
-Do not install the unrelated unscoped npm package `agentready`. AgentReady's supported hosted endpoint is `https://www.agentready.me/api/mcp` and its public skill is linked in the packet.
+Do not install the unrelated unscoped npm package `agentready`. This toolkit uses the LaunchBuddy endpoint; the older audit skill directory names are retained for compatibility.
 
 ## 3. Complete the first useful action
 
-Ask for a public product URL if none was supplied. Call `audit_my_launch` with the requested checks, or all three if the person requested the whole launch. Present separate scores, unavailable checks, evidence and three next actions. Do not average the scores or treat a scan as proof of customer demand.
+Start with the builder’s stated problem. Use `search_launch_resources` to find a relevant guide, skill, worksheet or tool on LaunchBuddy. A URL scan is optional. If a public diagnostic is useful and requested, ask for the URL if none was supplied, then call `audit_my_launch` with the requested checks, or all three for a whole-launch audit. Present separate scores, unavailable checks, evidence and three next actions. Do not average the scores or treat a scan as proof of customer demand.
 
 Keep the original JSON and native packs so `verify_launch_audit` can check the same findings after an authorized change is live. A failed phase remains unknown. Select one task and give a matching resource plus a completion check. Installation alone is not the success condition.
 

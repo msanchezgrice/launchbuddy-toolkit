@@ -1,11 +1,11 @@
 # Choose a resource for the actual gap
 
-The complete searchable library is at https://launchbuddy.com/resources. Public metadata is available at https://launchbuddy.com/api/launch-resources. Use `search_launch_resources` and `get_launch_resource` from the MCP for the same reference index.
+The searchable library is at https://launchbuddy.com/resources. Public metadata is at https://launchbuddy.com/api/launch-resources. Use `search_launch_resources` and `get_launch_resource` from the LaunchBuddy MCP for the same reference index.
 
-LaunchBuddy covers growth, feedback, page clarity, creative and customer support. LaunchReady covers technical launch checks and remediation recipes. AgentReady covers agent discovery, access, operability and machine-readable contracts. Swarm supplies launch-channel discovery and availability metadata.
+Start with the builder’s problem. LaunchBuddy brings together growth and feedback guides, technical launch checks, agent-readiness tools, creative and support recipes, and relevant channel discovery. The first value can be a guide, worksheet, free tool or public diagnostic; a scan or account is not mandatory for every task.
 
-Keep the originating resource's canonical URL, method, native finding ID and pack version. Recommend a few relevant resources per gap, explaining the action and the evidence needed to finish. A catalogue channel is a discovery lead, not proof that an agent can submit, that a product is eligible, or that a listing is live.
+Use https://launchbuddy.com/tools for 13 free tools. Local JSON checks and planning tools do not execute provider sessions. Use the combined `audit_my_launch` tool for public diagnostics, selecting `checks: ["technical"]` or `checks: ["agents"]` when that is all the task needs. Keep the full original audit JSON and native packs for `verify_launch_audit` after a change is live.
 
-For a technical audit alone, use LaunchReady's `scan_launch_readiness` and preserve Fix Pack v1 for `verify_launch_fixes`. For an agent audit alone, `scan_url` already includes Fix Pack v2; immediately calling `get_fix_pack` would scan again. Preserve that pack for `verify_fixes`.
+Keep canonical LaunchBuddy content URLs and the original native finding IDs and pack versions. Recommend a few relevant resources per gap, explaining the action and completion evidence. A channel entry is a discovery lead, not proof of supported submission, eligibility or publication. Missing evidence stays unknown.
 
-The public AgentReady companion is https://github.com/msanchezgrice/agentready-tools. Its hosted MCP is https://www.agentready.me/api/mcp; do not substitute the unrelated npm package named `agentready`.
+Legacy skill directory names remain compatible. They are not a reason to install the unrelated npm package named `agentready` or send a builder to a secondary brand.
