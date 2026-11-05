@@ -1,0 +1,9 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.msanchezgrice/launchbuddy",
+  "title": "LaunchBuddy: Builder Tools and Launch Audits",
+  "description": "Find builder resources, plan your next test, and audit public-site launch readiness.",
+  "version": "0.4.0",
+  "websiteUrl": "https://launchbuddy.com/agents",
+  "remotes": [{"type": "streamable-http", "url": "https://launchbuddy.com/api/mcp"}]
+}
