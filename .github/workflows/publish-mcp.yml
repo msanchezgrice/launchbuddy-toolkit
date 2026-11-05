@@ -1,0 +1,44 @@
+name: Publish LaunchBuddy MCP
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: launchbuddy-mcp-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Install verified official publisher
+        run: |
+          curl --fail --location --retry 3 --max-time 60 https://github.com/modelcontextprotocol/registry/releases/download/v1.8.7/mcp-publisher_linux_amd64.tar.gz -o publisher.tar.gz
+          echo '00b21004149a4ce66f0782508ae4a2bce67d1bea395a8da0bd8028159fb59579  publisher.tar.gz' | sha256sum --check
+          tar -xzf publisher.tar.gz mcp-publisher
+      - name: Validate LaunchBuddy record
+        run: |
+          python3 -c "import json; s=json.load(open('server.json')); assert s['name']=='io.github.msanchezgrice/launchbuddy'; assert s['remotes']==[{'type':'streamable-http','url':'https://launchbuddy.com/api/mcp'}]"
+          ./mcp-publisher validate server.json
+      - name: Sign in with GitHub identity
+        run: ./mcp-publisher login github-oidc
+      - name: Publish LaunchBuddy
+        run: ./mcp-publisher publish server.json
+      - name: Verify public readback
+        run: |
+          python3 - <<'PY'
+          import json, time, urllib.request
+          expected=json.load(open('server.json'))
+          for attempt in range(5):
+              with urllib.request.urlopen('https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.msanchezgrice%2Flaunchbuddy', timeout=20) as response:
+                  data=json.load(response)
+              if any(row.get('server',{}).get('name')==expected['name'] and row['server'].get('version')==expected['version'] and row['server'].get('remotes')==expected['remotes'] for row in data.get('servers',[])):
+                  print('LaunchBuddy metadata and endpoint verified in the public registry.'); break
+              time.sleep(3)
+          else:
+              raise SystemExit('Publication readback not yet verified')
+          PY
