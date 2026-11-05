@@ -41,3 +41,7 @@ Public diagnosis, resources and DIY recipes are free. Connect only when a specif
 The web and hosted skill packet is version 1.0.1. The CLI is published as [getlaunchbuddy 0.3.3](https://www.npmjs.com/package/getlaunchbuddy/v/0.3.3), including the ten skill modules. The installer adds the LaunchBuddy router and MCP bridge for Claude, Codex and Cursor; focused skills are available separately through the packet or this repository. The registry download was verified against the tested package, with isolated installation/reinstallation checks and anonymous live MCP discovery for each client configuration. This does not certify native agent sessions or marketplace approval. Native OAuth expansion, setup diagnostics and broader plugin bundles are roadmap work.
 
 [Privacy and boundaries](docs/privacy.md) · [Resources and audit methods](docs/resources.md) · [Support](https://launchbuddy.com/contact)
+
+## Verified client resource discovery
+
+Claude Code, Codex CLI and Cursor CLI completed anonymous public-resource searches on November 5, 2026. See [scope and permission notes](docs/client-verification.md). Native marketplace approval and private/paid workflows require separate checks.
